@@ -69,14 +69,32 @@ nav ul {
 
 /* Link Styling */
 nav ul li a {
+    position: relative;
     text-decoration: none;
     color: var(--white);
-    transition: 0.4s ease;
+    padding-bottom: 5px;
+    transition: color 0.4s ease;
 }
 
-/* Change color when Hovered */
+/* Pseudo-element - underline animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thiccness */
+    background-color: var(--text-color);
+    transition: width 0.4s ease;
+}
+
+/* Animation effect on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
 nav ul li a:hover {
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 nav ul li a.active {
