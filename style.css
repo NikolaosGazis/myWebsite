@@ -61,8 +61,8 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    font-size: 30px;
+    gap: 25px;
+    font-size: 28px;
     list-style: none;
     z-index: 1;
     left: -40px;
