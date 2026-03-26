@@ -159,7 +159,6 @@ nav ul li a.active {
     color: #c3c3c3;
     mask-border: 50px;
     margin-bottom: 35px;
-    text-align: justify;
 }
 
 .left .btn {
@@ -262,35 +261,76 @@ nav ul li a.active {
     width: 100%;
     min-height: 100vh;
     z-index: -1;
-    padding: 250px 0 50px;
+    padding: 150px 0 50px;
 }
 
-.contact .contact-info {
+.contact-hero {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.contact-hero p {
+    color: #c3c3c3;
+    font-size: 16px;
+}
+
+.contact-bubbles {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
 }
 
-.contact-info .cl {
-    flex: 1;
-    margin-top: -80px;
-}
-
-.cl h1 {
-    font-size: 2rem;
-    margin: 25px 0;
+.contact-bubble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
     color: var(--white);
 }
 
-.cl p {
-    width: 90%;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 25px;
+.bubble-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, #383528 0%, #191919 100%);
+    border: 2px solid #3b3b3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-bubble span {
+    font-size: 15px;
+    font-weight: 500;
     color: #c3c3c3;
-    mask-border: 50px;
-    margin-bottom: 35px;
-    text-align: justify;
+    transition: color 0.3s ease;
+}
+
+.contact-bubble small {
+    font-size: 12px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.contact-bubble:hover .bubble-icon {
+    border-color: var(--text-color);
+    box-shadow: 0 0 25px rgba(0, 70, 139, 0.6);
+    transform: translateY(-8px);
+}
+
+.contact-bubble:hover span,
+.contact-bubble:hover small {
+    color: var(--white);
 }
 /* Contact Elements - End */
 
@@ -386,6 +426,16 @@ footer p {
     nav ul li {
         text-align: center;
         padding: 10px 0;
+    }
+
+    .contact-bubbles {
+        gap: 25px;
+    }
+
+    .bubble-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 40px;
     }
 }
 /* Mobile Devices - End */

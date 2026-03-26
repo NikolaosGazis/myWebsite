@@ -30,7 +30,8 @@
                 <div class="name">
                     <a href="#"><span>Nikolaos</span> Gazis</a>
                 </div>
-                <ul>
+                <button class="burger" id="burger">&#9776;</button>
+                <ul id="nav-links">
                     <li><a href="index.html">About</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
@@ -41,25 +42,68 @@
 
     <section class="contact">
         <div class="container">
-            <div class="contact-info">
-                <div class="cl"> <!-- 'Contact Left' -->
-                    <h1>Contact Me</h1>
-                    <p>You can find and contact me using my Social Links in the About section,
-                        alternative methods are:
-                    </p>
-                    <p>
-                            • Email: nikolaosgazis3008@gmail.com
-                    </p>
-                    <p>
-                            • Discord: NTQ13
-                    </p>
-                </div>
+            <div class="contact-hero">
+                <h1>Contact Me</h1>
+                <p>Feel free to reach out through any of the platforms below.</p>
             </div>
+            <div class="contact-bubbles">
+                <a href="https://github.com/NikolaosGazis" target="_blank" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nikolaos-gazis-b258b5263/" target="_blank" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:nikolaosgazis3008@gmail.com" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </div>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://discord.com" target="_blank" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </div>
+                    <span>Discord</span>
+                    <small>NTQ13</small>
+                </a>
+                <a href="https://www.instagram.com/nikos_gazis13/" target="_blank" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/nikos.gazis.564/" target="_blank" class="contact-bubble">
+                    <div class="bubble-icon">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </div>
+                    <span>Facebook</span>
+                </a>
+            </div>
+
             <footer>
                 <p class="ftext">©2026 Nikoloas Gazis. All rights reserved.</p>
             </footer>
         </div>
     </section>
+
+    <!-- Import Icons Module -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('nav-links');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
 </body>
 
 </html>
