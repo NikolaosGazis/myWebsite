@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Reset attributes for all elements */
 * {
     margin: 0;
@@ -20,6 +24,7 @@
     max-width: 1250px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Header Elements - Start */
@@ -83,15 +88,17 @@ nav ul li a::after {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
+    width: 100%;
     height: 2px; /* Thiccness */
     background-color: var(--text-color);
+    opacity: 0;
     transition: width 0.4s ease;
 }
 
 /* Animation effect on hover */
-nav ul li a:hover::after {
-    width: 100%;
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    opacity: 1;
 }
 
 nav ul li a:hover {
@@ -99,7 +106,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    color: var(--text-color)
+    color: var(--text-color);
 }
 /* Header Elements - End */
 
@@ -109,7 +116,7 @@ nav ul li a.active {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: -1;
     padding: 250px 0 50px;
 }
@@ -236,7 +243,7 @@ nav ul li a.active {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: -1;
     padding: 250px 0 50px;
 }
@@ -253,7 +260,7 @@ nav ul li a.active {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: -1;
     padding: 250px 0 50px;
 }
@@ -295,4 +302,90 @@ footer p {
     margin-top: 50px;
     font-size: 0.9rem;
 }
+
+.burger {
+    display: none;
+}
 /* General Elements - End */
+
+/* Mobile Devices - Start */
+@media (max-width: 768px) {
+    .about .about-info {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-info .left,
+    .about-info .right {
+        width: 100%;
+    }
+
+    .left p {
+        width: 100%;
+    }
+
+    .left .btn,
+    .social,
+    .social .social-links {
+        justify-content: center;
+    }
+
+    .right .profile img {
+        width: min(400px, 70vw);
+        height: min(400px, 70vw);
+    }
+
+    .right .profile {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    nav .name a {
+        font-size: 22px;
+    }
+
+    nav ul {
+        font-size: 18px;
+        gap: 15px;
+        left: 0;
+    }
+
+    header {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .burger {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--mob-color);
+        padding: 15px 0;
+        gap: 0;
+        left: 0;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+/* Mobile Devices - End */
