@@ -53,7 +53,7 @@ body.fade-out {
     --mob-color: #2d2d2d;
     --text-secondary: #c3c3c3;
     --border-color: #3b3b3b;
-    --card-bg: var(--card-bg);
+    --card-bg: linear-gradient(130deg, #2a2a2a 0%, #303030 100%);
     --text-muted: #666;
 }
 
@@ -477,25 +477,28 @@ nav ul li a.active {
     margin-bottom: 30px;
 }
 
-.github-cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .activity-graph {
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     border-radius: 10px;
     max-width: 100%;
     height: auto;
 }
 
-.github-cards img {
+/* Shown in place of a stats image when the external service fails to load */
+.stats-fallback {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px dashed var(--border-color);
     border-radius: 10px;
-    max-width: 100%;
-    height: auto;
+    padding: 20px 30px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.stats-fallback:hover {
+    color: var(--text-color);
+    border-color: var(--text-color);
 }
 /* Work Elements - End */
 
@@ -537,6 +540,9 @@ nav ul li a.active {
     gap: 10px;
     text-decoration: none;
     color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .bubble-icon {

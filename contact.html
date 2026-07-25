@@ -73,13 +73,13 @@
                         </div>
                         <span>Gmail</span>
                     </a>
-                    <div class="contact-bubble" onclick="copyDiscord()" style="cursor: pointer;">
+                    <button type="button" class="contact-bubble" onclick="copyDiscord()">
                         <div class="bubble-icon">
                             <ion-icon name="logo-discord"></ion-icon>
                         </div>
                         <span>Discord</span>
                         <small>NTQ13</small>
-                    </div>
+                    </button>
                     <a href="https://www.instagram.com/nikos_gazis13/" target="_blank" rel="noopener noreferrer" class="contact-bubble">
                         <div class="bubble-icon">
                             <ion-icon name="logo-instagram"></ion-icon>
@@ -105,45 +105,11 @@
         <!-- Import Icons Module -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        
-        <!-- Scripts -->
+
+        <!-- Shared Scripts (burger, theme toggle, nav shrink, page transitions) -->
+        <script src="script.js"></script>
+        <!-- Page-specific Scripts -->
         <script>
-            const burger = document.getElementById('burger');
-            const navLinks = document.getElementById('nav-links');
-            burger.addEventListener('click', () => {
-                navLinks.classList.toggle('open');
-            });
-
-            // Nav shrink on scroll //
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-            });
-
-            // Page transitions //
-            document.querySelectorAll('a[href]').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('#') && link.getAttribute('target') !== '_blank') {
-                    link.addEventListener('click', e => {
-                        e.preventDefault();
-                        document.body.classList.add('fade-out');
-                        setTimeout(() => window.location.href = href, 150);
-                    });
-                }
-            });
-
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeIcon = themeToggle.querySelector('ion-icon');
-            function applyTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-                themeIcon.setAttribute('name', theme === 'dark' ? 'sunny' : 'moon');
-                localStorage.setItem('theme', theme);
-            }
-            applyTheme(localStorage.getItem('theme') || 'dark');
-            themeToggle.addEventListener('click', () => {
-                applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-            });
-
             // Staggered fade-in for contact bubbles //
             document.querySelectorAll('.contact-bubble').forEach((el, i) => {
                 el.style.opacity = '0';
